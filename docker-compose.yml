@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  berad:
+    build: .
+    user: $UID:$GID
+    platform: linux/x86_64
+    volumes:
+      - ./config:/berachain/.berad/config
+      - ./data:/berachain/.berad/data
+    command:
+      - start
+    ports:
+      - "26657:26657"
+      - "1317:1317"
+      - "8545:8545"
+      - "8546:8546"

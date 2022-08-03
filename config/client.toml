@@ -1,0 +1,5 @@
+chain-id = "bera_420-1"
+keyring-backend = "test"
+output = "json"
+node = "tcp://localhost:26657"
+broadcast-mode = "block"
