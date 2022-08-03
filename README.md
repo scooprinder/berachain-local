@@ -124,21 +124,71 @@ You can change the `genesis.json` file by altering `config/genesis.json`. To loa
 
 ## Accounts
 
-Local Berachain is pre-configured with one validator and 10 accounts with ION and OSMO balances.
+Local Berachain is pre-configured with one validator and 10 accounts with BERA balances.
 
-| Account   | Address                                                                                                  | Mnemonic                                                                                                                                                                   |
-| --------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| validator | `osmo1phaxpevm5wecex2jyaqty2a4v02qj7qmlmzk5a`<br/>`osmovaloper1phaxpevm5wecex2jyaqty2a4v02qj7qm9v24r6` | `satisfy adjust timber high purchase tuition stool faith fine install that you unaware feed domain license impose boss human eager hat rent enjoy dawn`                    |
-| test1     | `osmo1cyyzpxplxdzkeea7kwsydadg87357qnahakaks`                                                           | `notice oak worry limit wrap speak medal online prefer cluster roof addict wrist behave treat actual wasp year salad speed social layer crew genius`                       |
-| test2     | `osmo18s5lynnmx37hq4wlrw9gdn68sg2uxp5rgk26vv`                                                           | `quality vacuum heart guard buzz spike sight swarm shove special gym robust assume sudden deposit grid alcohol choice devote leader tilt noodle tide penalty`              |
-| test3     | `osmo1qwexv7c6sm95lwhzn9027vyu2ccneaqad4w8ka`                                                           | `symbol force gallery make bulk round subway violin worry mixture penalty kingdom boring survey tool fringe patrol sausage hard admit remember broken alien absorb`        |
-| test4     | `osmo14hcxlnwlqtq75ttaxf674vk6mafspg8xwgnn53`                                                           | `bounce success option birth apple portion aunt rural episode solution hockey pencil lend session cause hedgehog slender journey system canvas decorate razor catch empty` |
-| test5     | `osmo12rr534cer5c0vj53eq4y32lcwguyy7nndt0u2t`                                                           | `second render cat sing soup reward cluster island bench diet lumber grocery repeat balcony perfect diesel stumble piano distance caught occur example ozone loyal`        |
-| test6     | `osmo1nt33cjd5auzh36syym6azgc8tve0jlvklnq7jq`                                                           | `spatial forest elevator battle also spoon fun skirt flight initial nasty transfer glory palm drama gossip remove fan joke shove label dune debate quick`                  |
-| test7     | `osmo10qfrpash5g2vk3hppvu45x0g860czur8ff5yx0`                                                           | `noble width taxi input there patrol clown public spell aunt wish punch moment will misery eight excess arena pen turtle minimum grain vague inmate`                       |
-| test8     | `osmo1f4tvsdukfwh6s9swrc24gkuz23tp8pd3e9r5fa`                                                           | `cream sport mango believe inhale text fish rely elegant below earth april wall rug ritual blossom cherry detail length blind digital proof identify ride`                 |
-| test9     | `osmo1myv43sqgnj5sm4zl98ftl45af9cfzk7nhjxjqh`                                                           | `index light average senior silent limit usual local involve delay update rack cause inmate wall render magnet common feature laundry exact casual resource hundred`       |
-| test10    | `osmo14gs9zqh8m49yy9kscjqu9h72exyf295afg6kgk`                                                           | `prefer forget visit mistake mixture feel eyebrow autumn shop pair address airport diesel street pass vague innocent poem method awful require hurry unhappy shoulder`     |
+```yaml
+accounts:
+  - name: account0
+    address: bera1h2hh3lqda8hv8ekyk34034zpes2vzws9lqevg0
+    ethaddress: 0xBaaF78Fc0de9eEc3e6c4B46aF8d441Cc14c13A05
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"A2cYVNVpXQDe7TW+5VLh+z01ySlEZ48rHXctyYIeVmwi"}'
+    mnenomic: distance lunch cereal install movie payment order body purse property hospital arrange ketchup purchase observe motion category helmet reform sample garlic usage install unfold
+    coins: 1000000000000000000000000000abera
+  - name: account1 
+    address: bera1u8d0jafyytxnphsu4cj4e0trt7cseuxkmmnyxx
+    ethaddress: 0xe1daf9752422Cd30DE1CAE255Cbd635fB10cf0D6
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"AtZLJyPEAA+60JxhTS81+HbFOHAzScrDw9KnEKeyjMbs"}'
+    mnemonic: spring defense pencil girl success another peasant shiver silent buddy engage dice guard shield void engine laptop describe state beach tilt romance ready clog
+    coins: 1000000000000000000000000000abera
+  - name: account2
+    address: bera10r5tezfg9vsdfkfxcm47j2rjshfg68phpkknu9
+    ethaddress: 0x78E8bC89282b20D4D926C6EBE9287285d28d1c37
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"Anz+5p3IKybUg4gVSfYdw3h/Ub30q0otDb8GksCD5PeB"}'
+    mnemonic: crystal bonus same mosquito cruise decade hurdle owner tooth clown trick fuel message order arm text lobster law artist more glory pencil measure soccer
+    coins: 1000000000000000000000000000abera
+  - name: account3
+    address: bera19l5fp44k6k6n53z6556j564m7jfpt7nagnwmwh
+    ethaddress: 0x2fe890d6b6d5b53A445Aa5352A6AbbF49215FA7d
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"Ao+5jVAIGqKJX5fpHNBDQGxd2f5MFXj0s64HYkNludgS"}'
+    mnemonic: van wave misery chair dress cage brass enlist report knife planet demise accuse kitchen return silver make mobile noble bundle spy fade luxury talent
+    coins: 1000000000000000000000000000abera
+  - name: account4
+    address: bera1x4gkunk96ycyzpxknn2dxspnh30mwt8ne0k7ka
+    ethaddress: 0x35516E4eC5d1304104D69Cd4D34033bc5fb72Cf3
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"AjJWLyQS20jnC0Hy/n6A5J/9jW+Fa6M++pZ1BVYuqzAq"}'
+    mnemonic: lawn wool light wonder liberty negative jungle beauty include nut whisper infant burger sustain buddy sauce monitor kitchen limb boost select auction orchard fiction
+    coins: 1000000000000000000000000000abera
+  - name: account5
+    address: bera1jwtzd5667stwntcwaxnt83dr2rp0qmzxpfk23j
+    ethaddress: 0x939626D35Af416e9af0EE9a6b3C5a350c2F06C46
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"A7kLl1bbCVmPCvavf582U3sWepw0c/PSRzGAQ4/RDjUP"}'
+    mnemonic: imitate summer end fold trumpet ring tennis concert hip position breeze pond crisp spice ball base clock winner elephant kick win exchange rookie relief
+    coins: 1000000000000000000000000000abera
+  - name: account6
+    address: bera1rvadu7d67wqjvv5hjtfmlmcqnl0c8wq9xturza
+    ethaddress: 0x1B3ade79baf38126329792d3bFEf009FDF83b805
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"AkQuz7nbIm/id5NBBti6hmq9uSHcjtDGVpg0PqnRYX5h"}'
+    mnemonic: gather shine enrich coral lab broccoli birth six gorilla captain life club say hedgehog dragon eagle tumble prosper image cotton beef spoon comic carpet
+    coins: 1000000000000000000000000000abera
+  - name: account7
+    address: bera1jayk3m5mz9mtdphr0hdjgjw6zhtvfkgeuxuew8
+    ethaddress: 0x974968Ee9B1176b686E37DDb2449dA15D6C4d919
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"AoYXaFgUIdOoweaunzs7JskV8iorh17Rt4zru0amrjvG"}'
+    mnemonic: wide sound tail innocent cousin coast crane scatter jaguar smooth power hip enemy case only ivory chicken always corn elite truly result soup alcohol
+    coins: 1000000000000000000000000000abera
+  - name: account8
+    address: bera1gychrvuw609f7cg5a34c2z3j7lhd2ya6kf78e6
+    ethaddress: 0x413171b38Ed3CA9f6114EC6b850a32f7Eed513Ba
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"A14bUOwBjZeq/2+bWXQaYqMCqBYqAfWhgZKy/Y78hAQC"}'
+    mnemonic: identify camera lecture filter final fatigue bring kit high arctic ability tattoo guard glory finish river recycle much pen hedgehog only wrong taste sadness
+    coins: 1000000000000000000000000000abera
+  - name: account9
+    address: bera10awq6xscgpda7pqpk628yauws5etumn5we0f9q
+    ethaddress: 0x7f5C0D1a18405BDF0401B69472778e8532BE6e74
+    pubkey: '{"@type":"/ethermint.crypto.v1.ethsecp256k1.PubKey","key":"A3AC74U5e7mazw2krPP0oRG6f/UbVIN2pE3JbV07N5Hn"}'
+    mnemonic: slender acid side nothing dirt road agree disorder erode atom negative shield theory oil denial rubber disorder palm toilet plug galaxy end prize antique
+    coins: 1000000000000000000000000000abera
+```
 
 ## Common issues
 

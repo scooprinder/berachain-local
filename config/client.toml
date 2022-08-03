@@ -1,4 +1,4 @@
-chain-id = "bera_420-1"
+chain-id = "beradevnet_420-1"
 keyring-backend = "test"
 output = "json"
 node = "tcp://localhost:26657"
