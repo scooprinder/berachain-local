@@ -2,9 +2,8 @@ version: "3"
 
 services:
   berad:
-    build: .
+    image: ghcr.io/berachain/berachain-node:latest
     user: $UID:$GID
-    platform: linux/x86_64
     volumes:
       - ./config:/berachain/.berad/config
       - ./data:/berachain/.berad/data
