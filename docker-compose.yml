@@ -2,7 +2,9 @@ version: "3"
 
 services:
   berad:
-    image: ghcr.io/berachain/berachain-node:latest
+    env_file:
+      - .env
+    image: ghcr.io/berachain/berachain-node:${VERSION}
     user: $UID:$GID
     volumes:
       - ./config:/berachain/.berad/config
