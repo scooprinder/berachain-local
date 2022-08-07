@@ -57,7 +57,7 @@ inter-block-cache = true
 #
 # Example:
 # ["message.sender", "message.recipient"]
-index-events = []
+index-events = ["ethereum_tx.ethereumTxHash"]
 
 # IavlCacheSize set the size of the iavl tree cache. 
 # Default cache size is 50mb.
@@ -168,7 +168,7 @@ gas-to-suggest = 200000
 
 # DenomToSuggest defines the defult denom for fee suggestion.
 # Price must be in minimum-gas-prices.
-denom-to-suggest = "abera"
+denom-to-suggest = "uatom"
 
 ###############################################################################
 ###                           gRPC Configuration                            ###
