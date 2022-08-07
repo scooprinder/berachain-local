@@ -10,7 +10,8 @@ startd:
 stop:
 	docker-compose stop
 
-update: docker-compose pull
+update: 
+	docker-compose pull
 
 reset:
 	docker-compose rm
