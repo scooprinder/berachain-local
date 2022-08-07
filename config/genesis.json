@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2022-08-07T05:41:59.891655Z",
+  "genesis_time": "2022-08-07T06:11:04.400975Z",
   "chain_id": "beradevnet_420-1",
   "initial_height": "1",
   "consensus_params": {
@@ -34,17 +34,7 @@
         {
           "@type": "/ethermint.types.v1.EthAccount",
           "base_account": {
-            "address": "bera1mujm38se87d0j3xxmar5jz9kf3tjxltagudqrw",
-            "pub_key": null,
-            "account_number": "0",
-            "sequence": "0"
-          },
-          "code_hash": "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470"
-        },
-        {
-          "@type": "/ethermint.types.v1.EthAccount",
-          "base_account": {
-            "address": "bera1rqxf9l0pepk268m8fdvr4p86ha4hvlp7jdckar",
+            "address": "bera1h9m0uppejlddpgt5t2xw6hmdz6wevehkff94wr",
             "pub_key": null,
             "account_number": "0",
             "sequence": "0"
@@ -174,20 +164,11 @@
           "coins": []
         },
         {
-          "address": "bera1rqxf9l0pepk268m8fdvr4p86ha4hvlp7jdckar",
-          "coins": [
-            {
-              "denom": "abera",
-              "amount": "6660000000000000000000000000"
-            }
-          ]
-        },
-        {
           "address": "bera1rvadu7d67wqjvv5hjtfmlmcqnl0c8wq9xturza",
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
         },
@@ -196,7 +177,7 @@
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
         },
@@ -205,7 +186,7 @@
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
         },
@@ -214,7 +195,7 @@
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
         },
@@ -223,7 +204,7 @@
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
         },
@@ -232,7 +213,7 @@
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
         },
@@ -241,7 +222,7 @@
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
         },
@@ -250,29 +231,29 @@
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
+        },
+        {
+          "address": "bera1h9m0uppejlddpgt5t2xw6hmdz6wevehkff94wr",
+          "coins": []
         },
         {
           "address": "bera1h2hh3lqda8hv8ekyk34034zpes2vzws9lqevg0",
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
-        },
-        {
-          "address": "bera1mujm38se87d0j3xxmar5jz9kf3tjxltagudqrw",
-          "coins": []
         },
         {
           "address": "bera1u8d0jafyytxnphsu4cj4e0trt7cseuxkmmnyxx",
           "coins": [
             {
               "denom": "abera",
-              "amount": "1000000000000000000000000000"
+              "amount": "50000000000000000000000000"
             }
           ]
         }
@@ -280,7 +261,7 @@
       "supply": [
         {
           "denom": "abera",
-          "amount": "16660000000000000000000000000"
+          "amount": "500000000000000000000000000"
         }
       ],
       "denom_metadata": []
@@ -352,11 +333,11 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "bera1mujm38se87d0j3xxmar5jz9kf3tjxltagudqrw",
-                "validator_address": "beravaloper1mujm38se87d0j3xxmar5jz9kf3tjxlta5fuu6c",
+                "delegator_address": "bera1h9m0uppejlddpgt5t2xw6hmdz6wevehkff94wr",
+                "validator_address": "beravaloper1h9m0uppejlddpgt5t2xw6hmdz6wevehk4u5fh4",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "6WgN884Lt9PpJFxRN22c4AxyLYAs/Kz8BJze3tVkEfk="
+                  "key": "j8vthbs88YMjVuxjdcgfl5Zc0w77nD1bruMabgkbuD4="
                 },
                 "value": {
                   "denom": "abera",
@@ -364,7 +345,7 @@
                 }
               }
             ],
-            "memo": "1c34bedc54bf7d1a75568186d64084cba0a5927c@192.168.1.2:26656",
+            "memo": "173f39f1cdb0b99a49dfd134b035a7ef58283c69@192.168.1.2:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -374,7 +355,7 @@
               {
                 "public_key": {
                   "@type": "/ethermint.crypto.v1.ethsecp256k1.PubKey",
-                  "key": "AmjeeBFSzFfCbwL/oGWo8t7QxZBPHzCN30gjV8QVYAF2"
+                  "key": "A0sthVwP2K5JJKBj/JNHMp+jZ9459l4xULPwRsaSOvc8"
                 },
                 "mode_info": {
                   "single": {
@@ -393,7 +374,7 @@
             "tip": null
           },
           "signatures": [
-            "3lxP+GXirMZXr3hY8r4tiY/kKQBT0tGc/XEfTN1SmQ0xzLnJn839ucUZN7M5oj2EmWYAq3Pm35UQ4Plj1s5iXwE="
+            "pt2+xhxPtR6iF4cMAuasCtwt60kfZIjK0xq2D4A4rS8ceTsaLUcFJ6TLFdyNFOF/KiOULiKBvTqwMzrYafLB5QA="
           ]
         }
       ]
@@ -401,12 +382,12 @@
     "inflation": {
       "params": {
         "mint_denom": "abera",
-        "blocks_per_year": "1052900",
+        "blocks_per_year": "10519200",
         "community_tax": "0.15"
       },
       "previous_proposer": "",
       "minter": {
-        "inflation": "0.10",
+        "inflation": "0.100000000000000000",
         "annual_provisions": "0"
       }
     },
