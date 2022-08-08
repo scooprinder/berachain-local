@@ -14,7 +14,7 @@ minimum-gas-prices = "0abera"
 # nothing: all historic states will be saved, nothing will be deleted (i.e. archiving node)
 # everything: 2 latest states will be kept; pruning at 10 block intervals.
 # custom: allow pruning options to be manually specified through 'pruning-keep-recent', and 'pruning-interval'
-pruning = "default"
+pruning = "nothing"
 
 # These are applied if and only if the pruning strategy is custom.
 pruning-keep-recent = "0"
@@ -57,7 +57,7 @@ inter-block-cache = true
 #
 # Example:
 # ["message.sender", "message.recipient"]
-index-events = []
+index-events = ["ethereum_tx.ethereumTxHash"]
 
 # IavlCacheSize set the size of the iavl tree cache. 
 # Default cache size is 50mb.
@@ -110,13 +110,13 @@ global-labels = [
 [api]
 
 # Enable defines if the API server should be enabled.
-enable = false
+enable = true
 
 # Swagger defines if swagger documentation should automatically be registered.
-swagger = false
+swagger = true
 
 # Address defines the API server to listen on.
-address = "tcp://0.0.0.0:1317"
+address = "tcp://0.0.0.0:26654"
 
 # MaxOpenConnections defines the number of maximum open connections.
 max-open-connections = 1000
@@ -127,6 +127,7 @@ rpc-read-timeout = 10
 # RPCWriteTimeout defines the Tendermint RPC write timeout (in seconds).
 rpc-write-timeout = 0
 
+enable-unsafe-cors = true
 # RPCMaxBodyBytes defines the Tendermint maximum response body (in bytes).
 rpc-max-body-bytes = 1000000
 
@@ -179,7 +180,7 @@ denom-to-suggest = "uatom"
 enable = true
 
 # Address defines the gRPC server address to bind to.
-address = "0.0.0.0:9090"
+address = "0.0.0.0:26653"
 
 # MaxRecvMsgSize defines the max message size in bytes the server can receive.
 # The default value is 10MB.
@@ -194,31 +195,16 @@ max-send-msg-size = "2147483647"
 ###############################################################################
 
 [grpc-web]
+address = "0.0.0.0:26658"
 
-# GRPCWebEnable defines if the gRPC-web should be enabled.
-# NOTE: gRPC must also be enabled, otherwise, this configuration is a no-op.
-enable = true
-
-# Address defines the gRPC-web server address to bind to.
-address = "0.0.0.0:9091"
-
-# EnableUnsafeCORS defines if CORS should be enabled (unsafe - use it at your own risk).
-enable-unsafe-cors = false
-
-###############################################################################
-###                        State Sync Configuration                         ###
-###############################################################################
-
-# State sync snapshots allow other nodes to rapidly join the network without replaying historical
-# blocks, instead downloading and applying a snapshot of the application state at a given height.
 [state-sync]
 
 # snapshot-interval specifies the block interval at which local state sync snapshots are
 # taken (0 to disable).
-snapshot-interval = 0
+snapshot-interval = 5
 
 # snapshot-keep-recent specifies the number of recent snapshots to keep and serve (0 to keep all).
-snapshot-keep-recent = 2
+snapshot-keep-recent = 10
 
 ###############################################################################
 ###                             EVM Configuration                           ###
@@ -244,14 +230,14 @@ max-tx-gas-wanted = 0
 enable = true
 
 # Address defines the EVM RPC HTTP server address to bind to.
-address = "0.0.0.0:8545"
+address = "0.0.0.0:26651"
 
 # Address defines the EVM WebSocket server address to bind to.
-ws-address = "0.0.0.0:8546"
+ws-address = "0.0.0.0:26652"
 
 # API defines a list of JSON-RPC namespaces that should be enabled
 # Example: "eth,txpool,personal,net,debug,web3"
-api = "eth,net,web3"
+api = "eth,net,web3,debug"
 
 # GasCap sets a cap on gas that can be used in eth_call/estimateGas (0=infinite). Default: 25,000,000.
 gas-cap = 25000000
