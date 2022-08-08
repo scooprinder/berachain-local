@@ -65,7 +65,6 @@ priv_validator_state_file = "data/priv_validator_state.json"
 
 # TCP or UNIX socket address for Tendermint to listen on for
 # connections from an external PrivValidator process
-mode = "validator"
 priv_validator_laddr = ""
 
 # Path to the JSON file containing the private key to use for node authentication in the p2p protocol
@@ -89,7 +88,7 @@ filter_peers = false
 [rpc]
 
 # TCP or UNIX socket address for the RPC server to listen on
-laddr = "tcp://0.0.0.0:26657"
+laddr = "tcp://127.0.0.1:26657"
 
 # A list of origins a cross-domain request can be executed from
 # Default value '[]' disables cors support
@@ -104,7 +103,7 @@ cors_allowed_headers = ["Origin", "Accept", "Content-Type", "X-Requested-With", 
 
 # TCP or UNIX socket address for the gRPC server to listen on
 # NOTE: This server only supports /broadcast_tx_commit
-grpc_laddr = "tcp://0.0.0.0:26656"
+grpc_laddr = ""
 
 # Maximum number of simultaneous connections.
 # Does not include RPC (HTTP&WebSocket) connections. See max_open_connections
@@ -168,7 +167,7 @@ experimental_close_on_slow_client = false
 # WARNING: Using a value larger than 10s will result in increasing the
 # global HTTP write timeout, which applies to all connections and endpoints.
 # See https://github.com/tendermint/tendermint/issues/3435
-timeout_broadcast_tx_commit = "30s"
+timeout_broadcast_tx_commit = "10s"
 
 # Maximum size of request body, in bytes
 max_body_bytes = 1000000
@@ -177,9 +176,6 @@ max_body_bytes = 1000000
 max_header_bytes = 1048576
 
 # The path to a file containing certificate that is used to create the HTTPS server.
-pprof-laddr = "localhost:26655"
-timeout-broadcast-tx-commit = "30s"
-grpc-laddr = "tcp://0.0.0.0:26656"
 # Might be either absolute path or path related to Tendermint's config directory.
 # If the certificate is signed by a certificate authority,
 # the certFile should be the concatenation of the server's certificate, any intermediates,
@@ -195,7 +191,7 @@ tls_cert_file = ""
 tls_key_file = ""
 
 # pprof listen address (https://golang.org/pkg/net/http/pprof)
-pprof_laddr = "localhost:26655"
+pprof_laddr = "localhost:6060"
 
 #######################################################
 ###           P2P Configuration Options             ###
@@ -203,7 +199,7 @@ pprof_laddr = "localhost:26655"
 [p2p]
 
 # Address to listen for incoming connections
-laddr = "tcp://0.0.0.0:26650"
+laddr = "tcp://0.0.0.0:26656"
 
 # Address to advertise to peers for them to dial
 # If empty, will use the same port as the laddr,
@@ -226,7 +222,7 @@ addr_book_file = "config/addrbook.json"
 
 # Set true for strict address routability rules
 # Set false for private or local networks
-addr_book_strict = false
+addr_book_strict = true
 
 # Maximum number of inbound peers
 max_num_inbound_peers = 40
@@ -253,9 +249,6 @@ send_rate = 5120000
 recv_rate = 5120000
 
 # Set true to enable the peer-exchange reactor
-persistent-peers = ""
-addr-book-strict = false
-allow-duplicate-ip = true
 pex = true
 
 # Seed mode, in which node constantly crawls the network and looks for
@@ -268,7 +261,7 @@ seed_mode = false
 private_peer_ids = ""
 
 # Toggle to disable guard against peers connecting from the same ip.
-allow_duplicate_ip = true
+allow_duplicate_ip = false
 
 # Peer connection configuration.
 handshake_timeout = "20s"
@@ -282,7 +275,7 @@ dial_timeout = "3s"
 # Mempool version to use:
 #   1) "v0" - (default) FIFO mempool.
 #   2) "v1" - prioritized mempool.
-version = "v1"
+version = "v0"
 
 recheck = true
 broadcast = true
@@ -398,7 +391,7 @@ timeout_precommit_delta = "500ms"
 # How long we wait after committing a block, before starting on the new
 # height (this gives us a chance to receive some more precommits, even
 # though we already have +2/3).
-timeout_commit = "1s"
+timeout_commit = "5s"
 
 # How many blocks to look back to check existence of the node's consensus votes before joining consensus
 # When non-zero, the node will panic upon restart
@@ -413,7 +406,6 @@ skip_timeout_commit = false
 create_empty_blocks = true
 create_empty_blocks_interval = "0s"
 
-timeout-commit = "1s"
 # Reactor sleep duration parameters
 peer_gossip_sleep_duration = "100ms"
 peer_query_maj23_sleep_duration = "2s"
