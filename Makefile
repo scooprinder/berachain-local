@@ -1,5 +1,7 @@
-CURRENT_UID := $(id -u)
-CURRENT_GID := $(id -g)
+#!/usr/bin/make -f
+export GO111MODULE = on
+CURRENT_UID:=$(id -u)
+CURRENT_GID:=$(id -g)
 
 start: build
 	env UID=${CURRENT_UID} GID=${CURRENT_GID} docker-compose up
@@ -17,7 +19,7 @@ update:
 	docker-compose pull
 
 reset:
-	docker-compose rm
+	docker-compose rm -f
 	rm -rf ./data/ || true 
 	mkdir -p ./data/
 	cp priv_validator_state.json ./data
