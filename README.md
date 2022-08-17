@@ -12,14 +12,13 @@ Local Berachain has the following advantages over a public testnet:
 - Quick to reset for rapid iterations
 - Simple simulations of different scenarios
 - Controllable validator behavior
+- Off-chain Oracle service.
 
 ## Prerequisites
 
 - [`Docker`](https://www.docker.com/)
 - [`docker-compose`](https://github.com/docker/compose)
-- [`Berachaind`](https://get.Berachain.zone)
-  * Select option 3 (Local Berachain), the installer will configure everything for you. 
-  * The Berachaind dameon on your local computer is used to communicate with the Local Berachain daemin running inside the Docker container. 
+- [`berad`](https://berachain.com)
 - Supported known architecture: x86_64
 - 16+ GB of RAM is recommended
 
@@ -28,7 +27,7 @@ Local Berachain has the following advantages over a public testnet:
 1. Run the following commands::
 
 ```sh
-git clone https://github.com/berachain/local-berachain.git
+git clone https://github.com/berachain/berachain-local.git
 cd berachain-local
 ```
 
@@ -74,13 +73,19 @@ Stop Local Berachain (and delete chain data):
 make restart
 ```
 
+Upgrade to latest Nightly:
+
+```sh
+make update
+```
+
 ## Configure Local Berachain
 
 The majority of Local Berachain is implemented through a `docker-compose.yml` file, making it easily customizable. You can use Local Berachain as a starting template point for setting up your own local Berachain devnet with Docker containers.
 
 Out of the box, Local Berachain comes preconfigured with opinionated settings such as:
 
-- ports defined for Tendermint RPC (26657), LCD (1317), EVM http (8545), and EVM websocket (8546)
+- ports defined for the Berachain Oracle Service (7171), Tendermint (26653, 26657), LCD (1317), EVM Http (8545), and EVM Websocket (8546)
 - standard [accounts](#accounts)
 
 ### Modifying node configuration

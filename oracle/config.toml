@@ -25,6 +25,15 @@ providers = [
 quote = "USD"
 
 [[currency_pairs]]
+base = "AVAX"
+providers = [
+  "kraken",
+  "huobi",
+  "coinbase"
+]
+quote = "USD"
+
+[[currency_pairs]]
 base = "ETH"
 providers = [
   "kraken",
@@ -39,6 +48,7 @@ chain_id = "beradevnet_420-1"
 validator = "beravaloper12luku6uxehhak02py4rcz65zu0swh7wj6mvsul"
 prefix = "bera"
 
+# TODO: read signature data from validator
 [keyring]
 backend = "test"
 dir = "/berachain/.berad/oracle/"
