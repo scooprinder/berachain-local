@@ -55,10 +55,12 @@ make start
 ```
 
 Your environment now contains:
-- Ethereum JSON-RPC http RPC node running on `http://localhost:8545`
-- Ethereum JSON-RPC websocket RPC node running on `ws://localhost:8546`
-- Tendermint RPC node running on `tcp://localhost:26657`
-- LCD running on http://localhost:1317
+- Ethereum JSON-RPC http RPC running on `http://localhost:8545`
+- Ethereum JSON-RPC websocket RPC running on `ws://localhost:8546`
+- Tendermint GRPC running on `tcp://localhost:26653`
+- Tendermint RPC running on `http://localhost:26657`
+- Berachain Oracle Service running on `tcp://localhost:7171`
+- LCD running on `http://localhost:1317`
 
 
 Stop Local Berachain (and retain chain data):
