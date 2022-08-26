@@ -50,8 +50,7 @@ prefix = "bera"
 
 [keyring]
 backend = "test"
-dir = "/.berad/"
-pass = "keyringPassword"
+dir = "/.berad"
 
 [rpc]
 grpc_endpoint = "node:26653"
