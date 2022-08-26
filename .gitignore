@@ -29,9 +29,9 @@ client/lcd/keys/*
 client/lcd/statik/statik.go
 remote/ansible/testnets
 mytestnet
-data/*.db
-data/*.wal
-data/snapshots/
+local/data/*.db
+local/data/*.wal
+local/data/snapshots/
 
 # Testing
 coverage.txt
