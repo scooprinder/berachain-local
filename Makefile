@@ -20,8 +20,8 @@ update:
 
 reset:
 	docker-compose rm -f
-	rm -rf ./data/ || true 
-	mkdir -p ./data/
-	cp priv_validator_state.json ./data
+	rm -rf ./local/data/ || true 
+	mkdir -p ./local/data/
+	cp priv_validator_state.json ./local/data/
 
 restart: reset start

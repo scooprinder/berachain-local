@@ -1,0 +1,74 @@
+gas_adjustment = 1.5
+provider_timeout = "500ms"
+
+[server]
+listen_addr = "0.0.0.0:7171"
+read_timeout = "20s"
+verbose_cors = true
+write_timeout = "20s"
+
+[[deviation_thresholds]]
+base = "USDT"
+threshold = "2"
+
+###############################################################################
+###                                L1 Tokens                                ###
+###############################################################################
+
+[[currency_pairs]]
+base = "ATOM"
+providers = [
+  "kraken",
+  "osmosis",
+  "coinbase"
+]
+quote = "USD"
+
+[[currency_pairs]]
+base = "AVAX"
+providers = [
+  "kraken",
+  "huobi",
+  "coinbase"
+]
+quote = "USD"
+
+[[currency_pairs]]
+base = "ETH"
+providers = [
+  "kraken",
+  "gate",
+  "coinbase"
+]
+quote = "USD"
+
+[account]
+address = "bera12luku6uxehhak02py4rcz65zu0swh7wjxwav9f"
+chain_id = "beradevnet_420-1"
+validator = "beravaloper12luku6uxehhak02py4rcz65zu0swh7wj6mvsul"
+prefix = "bera"
+
+[keyring]
+backend = "test"
+dir = "/.berad/"
+pass = "keyringPassword"
+
+[rpc]
+grpc_endpoint = "node:26653"
+grpc_startup_timeout = "30000ms"
+rpc_timeout = "100ms"
+tmrpc_endpoint = "http://node:26657"
+
+[telemetry]
+enable_hostname = true
+enable_hostname_label = true
+enable_service_label = true
+enabled = true
+global_labels = [["chain-id", "beradevnet_420-1"]]
+service_name = "berad-oracle-feeder"
+type = "prometheus"
+
+[[provider_endpoints]]
+name = "binance"
+rest = "https://api1.binance.com"
+websocket = "stream.binance.com:9443"
