@@ -1,35 +1,40 @@
 version: "3"
 
 services:
+  # The Validator Node
   node:
     env_file:
       - .env
     image: ghcr.io/berachain/berachain-node:${VERSION}
     user: ":"
     volumes:
-      - ./local:/.berad
+      - ./local:/berachain/.berad
     command: ["start"]
     ports:
+      - "26660:26660"
       - "26653:26653"
       - "26656:26656"
       - "26657:26657"
       - "1317:1317"
       - "8545:8545"
       - "8546:8546"
+
+  # The Oracle Feeder Process
   oracle-feeder:
-      depends_on:
-        - node
-      env_file:
-        - .env
-      image: ghcr.io/berachain/berachain-node:${VERSION}
-      user: ":"
-      environment:
-        - PRICE_FEEDER_PASS=${PRICE_FEEDER_PASS}
-      volumes:
-        - ./local:/.berad
-      command: ["oracle-feeder", "/.berad/oracle/config.toml"]
-      ports:
-        - "7171:7171"
+    depends_on:
+      - node
+    env_file:
+      - .env
+    image: ghcr.io/berachain/berachain-node:${VERSION}
+    user: ":"
+    environment:
+      - PRICE_FEEDER_PASS=${PRICE_FEEDER_PASS}
+    volumes:
+      - ./local:/berachain/.berad
+    command: ["oracle-feeder", "/berachain/.berad/oracle/config.toml"]
+    ports:
+      - "7171:7171"
+
 networks:
   default:
     name: berachain-network

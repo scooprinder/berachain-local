@@ -50,7 +50,7 @@ prefix = "bera"
 
 [keyring]
 backend = "test"
-dir = "/.berad"
+dir = "/berachain/.berad"
 
 [rpc]
 grpc_endpoint = "node:26653"
