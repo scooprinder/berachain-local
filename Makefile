@@ -4,10 +4,10 @@ CURRENT_UID:=$(id -u)
 CURRENT_GID:=$(id -g)
 
 start: build
-	env UID=${CURRENT_UID} GID=${CURRENT_GID} docker-compose up
-
-startd: build
 	env UID=${CURRENT_UID} GID=${CURRENT_GID} docker-compose up -d
+
+startv: build
+	env UID=${CURRENT_UID} GID=${CURRENT_GID} docker-compose up
 	
 stop:
 	docker-compose stop
@@ -20,8 +20,8 @@ update:
 
 reset:
 	docker-compose rm -f
-	rm -rf ./local/data/ || true 
-	mkdir -p ./local/data/
-	cp priv_validator_state.json ./local/data/
+	rm -rf ./data/ || true 
+	mkdir -p ./data/
+	cp priv_validator_state.json ./data/
 
 restart: reset start
