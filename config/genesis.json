@@ -455,7 +455,7 @@
       "params": {
         "max_validators": 100,
         "historical_entries": 10000,
-        "pol_enabled": false
+        "pol_enabled": true
       },
       "last_total_power": "0",
       "last_validator_powers": [],
