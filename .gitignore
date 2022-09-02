@@ -29,10 +29,10 @@ client/lcd/keys/*
 client/lcd/statik/statik.go
 remote/ansible/testnets
 mytestnet
-local/data/*.db
-local/data/*.wal
-local/data/snapshots/
-local/config/addrbook.json 
+data/*.db
+data/*.wal
+data/snapshots/
+config/addrbook.json 
 
 # Testing
 coverage.txt

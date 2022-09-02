@@ -50,7 +50,8 @@ sudo apt install docker-compose -y
 
 ```sh
 make start
-make startv # verbose
+
+make startd # dettached mode
 ```
 
 Your environment now contains:
