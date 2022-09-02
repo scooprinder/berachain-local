@@ -3,6 +3,8 @@ on:
   pull_request:
   push:
     branches: main
+  schedule: 
+    - cron: "0 8 * * *" # 3:00am UTC-5
 
 jobs:
   check-livelyness:
@@ -17,9 +19,9 @@ jobs:
       - uses: docker-practice/actions-setup-docker@master
         if: ${{ matrix.os == 'macos-latest' }}
 
-      - name: Bring up berachain
+      - name: Bring up Berachain
         run: |
-          make start
+          make startd
       - name: check
         run: |
           ./checkLivelyness.sh 10 10 10 http://localhost
