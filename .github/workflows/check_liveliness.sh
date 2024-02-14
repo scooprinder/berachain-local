@@ -1,50 +1,31 @@
-#!/bin/bash
-
 CNT=0
 ITER=$1
 SLEEP=$2
 NUMBLOCKS=$3
 NODEADDR=$4
 
-if [ -z "$1" ]; then
-  echo "Invalid argument: missing number of iterations"
-  echo "sh check_liveliness.sh <iterations> <sleep> <num-blocks> <node-address>"
-  exit 1
-fi
-
-if [ -z "$2" ]; then
-  echo "Invalid argument: missing sleep duration"
-  echo "sh check_liveliness.sh <iterations> <sleep> <num-blocks> <node-address>"
-  exit 1
-fi
-
-if [ -z "$3" ]; then
-  echo "Invalid argument: missing number of blocks"
-  echo "sh check_liveliness.sh <iterations> <sleep> <num-blocks> <node-address>"
-  exit 1
-fi
-
-if [ -z "$4" ]; then
-  echo "Invalid argument: missing node address"
-  echo "sh check_liveliness.sh <iterations> <sleep> <num-blocks> <node-address>"
+if [ -z "$ITER" ] || [ -z "$SLEEP" ] || [ -z "$NUMBLOCKS" ] || [ -z "$NODEADDR" ]; then
+  echo "Invalid argument: missing or incomplete input"
+  echo "Usage: sh check_liveliness.sh <iterations> <sleep> <num-blocks> <node-address>"
   exit 1
 fi
 
 docker_containers=($(docker ps -q -f name=berad --format='{{.Names}}'))
 
-while [ ${CNT} -lt $ITER ]; do
-  curr_block=$(curl -s $NODEADDR:26657/status | jq -r '.result.sync_info.latest_block_height')
+while [ $CNT -lt $ITER ]; do
+  curr_block=$(curl -s "$NODEADDR:26657/status" | jq -r '.result.sync_info.latest_block_height')
 
-  if [ ! -z ${curr_block} ]; then
-    echo "Current block: ${curr_block}"
+  if [ -n "$curr_block" ]; then
+    echo "Current block: $curr_block"
   fi
 
-  if [ ! -z ${curr_block} ] && [ ${curr_block} -gt ${NUMBLOCKS} ]; then
+  if [ -n "$curr_block" ] && [ $curr_block -gt $NUMBLOCKS ]; then
     echo "Success: number of blocks reached"
     exit 0
   fi
 
   sleep $SLEEP
+  CNT=$((CNT + 1))
 done
 
 echo "Failed: timeout reached"
